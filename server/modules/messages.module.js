@@ -1,8 +1,10 @@
 // our messages
-let messages = [ { text: 'test', sender: 'person' } ];
+let messages = [];
 
 function addMessage( newMessage ){
-    console.log( 'in addMessage' );
+    console.log( 'in addMessage:', newMessage );
+    messages.push( newMessage );
+    return true;
 } // end addMessage
 
 module.exports = { messages: messages, addMessage: addMessage };

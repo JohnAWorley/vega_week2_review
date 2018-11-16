@@ -54,6 +54,8 @@ function sendMessage(){
             data: messageToSend
         }).then( function( response ){
             console.log( 'back from POST with:', response );
+            // empty input fields
+            $( '#newMessageIn' ).val('');
             // update messages on DOM
             getMessages();
         })
