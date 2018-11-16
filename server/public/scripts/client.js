@@ -15,8 +15,14 @@ function getMessages(){
         url: '/messages'
     }).then( function( response ){
         console.log( 'back from GET with:', response );
+        // empty the output element
+        let el = $( '#messagesOut' );
+        el.empty();
         // loop through response
-        // display each message in the #messagesOut ul element
+        for( let message of response ){
+            // display each message in the #messagesOut ul element
+            el.append( `<li>${ message.text}: <strong>${message.sender}</strong></li>`);
+        } // end for
     }) //end ajax
 } // end getMessages
 

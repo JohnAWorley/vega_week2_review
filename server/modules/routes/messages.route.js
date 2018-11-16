@@ -1,11 +1,11 @@
 const express = require( 'express' );
 const router = express.Router();
 
-let messages = [];
+let messageModule = require( '../messages.module' );
 
 router.get( '/', ( req, res )=>{
     console.log( 'GET hit' );
-    res.send( messages );
+    res.send( messageModule.messages );
 }) // end GET
 
 router.post( '/', ( req, res )=>{
