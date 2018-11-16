@@ -1,0 +1,24 @@
+{
+  "name": "week2review",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server/server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/devjanaprime/vega_week2_review.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/devjanaprime/vega_week2_review/issues"
+  },
+  "homepage": "https://github.com/devjanaprime/vega_week2_review#readme",
+  "description": "",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "express": "^4.16.4"
+  }
+}
