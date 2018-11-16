@@ -10,8 +10,14 @@ class Message{
 function getMessages(){
     console.log( 'in getMessages' );
     // make ajax get request
-    // loop through response
-    // display each message in the #messagesOut ul element
+    $.ajax({
+        method: 'GET',
+        url: '/messages'
+    }).then( function( response ){
+        console.log( 'back from GET with:', response );
+        // loop through response
+        // display each message in the #messagesOut ul element
+    }) //end ajax
 } // end getMessages
 
 function readyNow(){
@@ -36,7 +42,14 @@ function sendMessage(){
         const messageToSend = new Message( $( '#usernameIn' ).val(), $( '#newMessageIn' ).val() );
         console.log( 'sending:', messageToSend );
         // send message to server via POST
-        // update messages on DOM
-        getMessages();
+        $.ajax({
+            method: 'POST',
+            url: '/messages',
+            data: messageToSend
+        }).then( function( response ){
+            console.log( 'back from POST with:', response );
+            // update messages on DOM
+            getMessages();
+        })
     } //end no empties
 } // end sendMessage
